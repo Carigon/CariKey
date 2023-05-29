@@ -341,7 +341,7 @@ pcbs:
         type: trrs
         anchor:
           ref:
-            - matrix_inner_bottom
+            - matrix_inner_top
           shift: [32, -15]
           rotate: 270
         params:
@@ -357,7 +357,7 @@ pcbs:
         type: trrs
         anchor:
           ref:
-            - matrix_inner_bottom
+            - matrix_inner_top
           shift: [32, -13]
           rotate: 270
         params:
@@ -373,7 +373,7 @@ pcbs:
         type: jumper
         anchor:
           ref:
-            - matrix_inner_bottom
+            - matrix_inner_top
           shift: [23.5, 0]
           rotate: 270
         params:
@@ -385,7 +385,7 @@ pcbs:
         type: jumper
         anchor:
           ref:
-            - matrix_inner_bottom
+            - matrix_inner_top
           shift: [23.5, 0]
           rotate: 270
         params:
@@ -397,7 +397,7 @@ pcbs:
         type: slider
         anchor:
           ref:
-            - matrix_inner_bottom
+            - matrix_inner_top
           shift: [30, 0]
           rotate: 270
         params:
@@ -410,7 +410,7 @@ pcbs:
         type: slider
         anchor:
           ref:
-            - matrix_inner_bottom
+            - matrix_inner_top
           shift: [30, 0]
           rotate: 270
         params:
@@ -423,7 +423,7 @@ pcbs:
         type: button
         anchor:
           ref:
-            - matrix_inner_bottom
+            - matrix_inner_top
           shift: [17, 0]
           rotate: 270
         params:
@@ -435,7 +435,7 @@ pcbs:
         type: text
         anchor:
           ref:
-            - matrix_outer_bottom
+            - matrix_pinky_bottom
           shift: [0.75 kx, 0]
         params:
           text: "carikeys v0.1\\nby carigon\\nbased on samoklava\\nby soundmonster"
@@ -444,7 +444,7 @@ pcbs:
         type: text
         anchor:
           ref:
-            - matrix_outer_bottom
+            - matrix_pinky_bottom
           shift: [0.75 kx, 0]
         params:
           layer: B.SilkS
