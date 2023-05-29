@@ -118,34 +118,34 @@ outlines:
             shift: [0.5 kx - 0.5px, -0.5 ky - 0.5 py]
           - ref: thumbfan_near_thumb
             shift: [-0.5 kx + 0.5 px, -0.5 ky - 0.5 py]
-          - ref: matrix_pinky_bottom
+          - ref: matrix_outer_bottom
             shift: [0.5 kx - 0.5 py, -0.5 ky - 0.5 py]
-          - ref: matrix_pinky_home
-          - ref: matrix_inner_home
+          - ref: matrix_outer_home
+          - ref: matrix_outer_home
     patch_outer:
       - type: polygon
         points:
-          - ref: matrix_ring_top
+          - ref: matrix_ring_function
           - ref: matrix_ring_bottom
-          - ref: matrix_pinky_bottom
+          - ref: matrix_outer_bottom
             shift: [-0.5 (kx + px), 0]
-          - ref: matrix_pinky_top
+          - ref: matrix_outer_function
             shift: [-0.5 (kx + px), 0]
     patch_inner:
       - type: polygon
         points:
-          - ref: matrix_inner_top
+          - ref: matrix_inner_function
             shift: [0.5 (kx + px), 0]
           - ref: matrix_inner_bottom
             shift: [0.5 (kx + px), 0]
           - ref: matrix_index_bottom
-          - ref: matrix_index_top
+          - ref: matrix_index_function
     controller_area:
       main:
         type: rectangle
         anchor:
           ref:
-            - matrix_inner_top
+            - matrix_inner_function
           shift: [0 kx, -4.05 ky]
         size: [32, 76.5]
         corner: px
@@ -196,13 +196,13 @@ outlines:
       bottom_left:
         type: circle
         anchor:
-          - ref: matrix_pinky_bottom
+          - ref: matrix_outer_bottom
             shift: [0.5 kx, 0]
         radius: 1.05
       top_right:
         type: circle
         anchor:
-          - ref: matrix_inner_top
+          - ref: matrix_inner_function
             shift: [-0.5 kx, 0]
         radius: 1.05
       palm:
@@ -295,7 +295,7 @@ pcbs:
           orientation: up
         anchor:
           ref:
-            - matrix_inner_top
+            - matrix_inner_function
           shift: [20, -11]
           rotate: 270
       mcu_r:
@@ -304,14 +304,14 @@ pcbs:
           orientation: down
         anchor:
           ref:
-            - matrix_inner_top
+            - matrix_inner_function
           shift: [22.5, -12.25]
           rotate: 270
       pad_plus:
         type: pad
         anchor:
           ref:
-            - matrix_inner_top
+            - matrix_inner_function
           shift: [23, -6]
           rotate: 0
         params:
@@ -326,7 +326,7 @@ pcbs:
         type: pad
         anchor:
           ref:
-            - matrix_inner_top
+            - matrix_inner_function
           shift: [23, -3]
           rotate: 0
         params:
@@ -435,19 +435,19 @@ pcbs:
         type: text
         anchor:
           ref:
-            - matrix_pinky_bottom
+            - matrix_outer_bottom
           shift: [0.75 kx, 0]
         params:
-          text: "samoklava v0.1\\nby soundmonster"
+          text: "carikeys v0.1\\nby carigon\\nbased on samoklava\\nby soundmonster"
           justify: left
       info_r:
         type: text
         anchor:
           ref:
-            - matrix_pinky_bottom
+            - matrix_outer_bottom
           shift: [0.75 kx, 0]
         params:
           layer: B.SilkS
-          text: "samoklava v0.1\\nby soundmonster"
+          text: "carikeys v0.1\\nby carigon\\nbased on samoklava\\nby soundmonster"
           justify: right mirror
 
