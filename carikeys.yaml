@@ -28,17 +28,21 @@ points:
           shift: [0, -5]
   zones:
     matrix:
-      # anchor:
-      #   rotate: 5
       key.padding: ky
+      anchor.shift: [50, -150]
       columns:
-        pinky:
+        outer:
           stagger: 0 ky
+          spread: kx
+          key:
+            column_net: P21
+        pinky:
+          stagger: 0.1 ky
           spread: kx
           key:
             column_net: P20
         ring:
-          stagger: 0.7 ky
+          stagger: 1 ky
           spread: kx
           key:
             column_net: P19
@@ -48,7 +52,7 @@ points:
           key:
             column_net: P18
         index:
-          stagger: -0.2 ky
+          stagger: -0.3 ky
           spread: kx
           key:
             column_net: P15
@@ -59,11 +63,15 @@ points:
             column_net: P14
       rows:
         bottom:
-          row_net: P6
+          row_net: P9
         home:
-          row_net: P5
+          row_net: P8
         top:
-          row_net: P4
+          row_net: P7
+        number:
+          row_net: P6
+        function:
+          row_net: P5
     thumbfan:
       anchor:
         ref: matrix_inner_bottom
@@ -89,7 +97,7 @@ points:
             column_net: P14
       rows:
         thumb:
-          row_net: P7
+          row_net: P10
 outlines:
   # board dimensions according to JLCPCB: 122.28 mm x 101.05 mm
   exports:
@@ -109,34 +117,34 @@ outlines:
             shift: [0.5 kx - 0.5px, -0.5 ky - 0.5 py]
           - ref: thumbfan_near_thumb
             shift: [-0.5 kx + 0.5 px, -0.5 ky - 0.5 py]
-          - ref: matrix_pinky_bottom
+          - ref: matrix_outer_bottom
             shift: [0.5 kx - 0.5 py, -0.5 ky - 0.5 py]
-          - ref: matrix_pinky_home
-          - ref: matrix_inner_home
+          - ref: matrix_outer_home
+          - ref: matrix_outer_home
     patch_outer:
       - type: polygon
         points:
-          - ref: matrix_ring_top
+          - ref: matrix_ring_function
           - ref: matrix_ring_bottom
-          - ref: matrix_pinky_bottom
+          - ref: matrix_outer_bottom
             shift: [-0.5 (kx + px), 0]
-          - ref: matrix_pinky_top
+          - ref: matrix_outer_function
             shift: [-0.5 (kx + px), 0]
     patch_inner:
       - type: polygon
         points:
-          - ref: matrix_inner_top
+          - ref: matrix_inner_function
             shift: [0.5 (kx + px), 0]
           - ref: matrix_inner_bottom
             shift: [0.5 (kx + px), 0]
           - ref: matrix_index_bottom
-          - ref: matrix_index_top
+          - ref: matrix_index_function
     controller_area:
       main:
         type: rectangle
         anchor:
           ref:
-            - matrix_inner_top
+            - matrix_inner_function
           shift: [0 kx, -4.05 ky]
         size: [32, 76.5]
         corner: px
@@ -187,13 +195,13 @@ outlines:
       bottom_left:
         type: circle
         anchor:
-          - ref: matrix_pinky_bottom
+          - ref: matrix_outer_bottom
             shift: [0.5 kx, 0]
         radius: 1.05
       top_right:
         type: circle
         anchor:
-          - ref: matrix_inner_top
+          - ref: matrix_inner_function
             shift: [-0.5 kx, 0]
         radius: 1.05
       palm:
@@ -286,7 +294,7 @@ pcbs:
           orientation: up
         anchor:
           ref:
-            - matrix_inner_top
+            - matrix_inner_function
           shift: [20, -11]
           rotate: 270
       mcu_r:
@@ -295,14 +303,14 @@ pcbs:
           orientation: down
         anchor:
           ref:
-            - matrix_inner_top
+            - matrix_inner_function
           shift: [22.5, -12.25]
           rotate: 270
       pad_plus:
         type: pad
         anchor:
           ref:
-            - matrix_inner_top
+            - matrix_inner_function
           shift: [23, -6]
           rotate: 0
         params:
@@ -317,7 +325,7 @@ pcbs:
         type: pad
         anchor:
           ref:
-            - matrix_inner_top
+            - matrix_inner_function
           shift: [23, -3]
           rotate: 0
         params:
@@ -332,7 +340,7 @@ pcbs:
         type: trrs
         anchor:
           ref:
-            - matrix_inner_bottom
+            - matrix_inner_top
           shift: [32, -15]
           rotate: 270
         params:
@@ -348,7 +356,7 @@ pcbs:
         type: trrs
         anchor:
           ref:
-            - matrix_inner_bottom
+            - matrix_inner_top
           shift: [32, -13]
           rotate: 270
         params:
@@ -364,7 +372,7 @@ pcbs:
         type: jumper
         anchor:
           ref:
-            - matrix_inner_bottom
+            - matrix_inner_top
           shift: [23.5, 0]
           rotate: 270
         params:
@@ -376,7 +384,7 @@ pcbs:
         type: jumper
         anchor:
           ref:
-            - matrix_inner_bottom
+            - matrix_inner_top
           shift: [23.5, 0]
           rotate: 270
         params:
@@ -388,7 +396,7 @@ pcbs:
         type: slider
         anchor:
           ref:
-            - matrix_inner_bottom
+            - matrix_inner_top
           shift: [30, 0]
           rotate: 270
         params:
@@ -401,7 +409,7 @@ pcbs:
         type: slider
         anchor:
           ref:
-            - matrix_inner_bottom
+            - matrix_inner_top
           shift: [30, 0]
           rotate: 270
         params:
@@ -414,7 +422,7 @@ pcbs:
         type: button
         anchor:
           ref:
-            - matrix_inner_bottom
+            - matrix_inner_top
           shift: [17, 0]
           rotate: 270
         params:
@@ -429,7 +437,7 @@ pcbs:
             - matrix_pinky_bottom
           shift: [0.75 kx, 0]
         params:
-          text: "samoklava v0.1\\nby soundmonster"
+          text: "carikeys v0.1\\nby carigon\\nbased on samoklava\\nby soundmonster"
           justify: left
       info_r:
         type: text
@@ -439,6 +447,6 @@ pcbs:
           shift: [0.75 kx, 0]
         params:
           layer: B.SilkS
-          text: "samoklava v0.1\\nby soundmonster"
+          text: "carikeys v0.1\\nby carigon\\nbased on samoklava\\nby soundmonster"
           justify: right mirror
 
