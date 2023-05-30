@@ -28,9 +28,8 @@ points:
           shift: [0, -5]
   zones:
     matrix:
-      # anchor:
-      #   rotate: 5
       key.padding: ky
+      anchor.shift: [50, -150]
       columns:
         outer:
           stagger: 0 ky
